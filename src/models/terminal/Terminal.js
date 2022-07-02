@@ -5,7 +5,7 @@ const Terminal = () => {
 	const gltf = useLoader(GLTFLoader, 'terminal.glb')
 	return (
 		<mesh scale={[0.3, 0.3, 0.3]} >
-			<primitive object={gltf.scene} position={[0, 8, -20]} />
+			<primitive object={gltf.scene} position={[0, 8, -40]} />
 		</mesh >
 	);
 }

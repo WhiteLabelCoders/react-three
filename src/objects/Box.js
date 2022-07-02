@@ -1,7 +1,8 @@
 const Box = () => {
+
 	return (
-		<mesh position={[0, 1, -10]} scale={1} onClick={(e) => console.log('click')}>
-			<boxGeometry args={[1, 1, 1]} />
+		<mesh position={[0, 13, -30]} scale={0.6} onClick={(e) => console.log('click')} name={"screen"} >
+			<boxGeometry args={[76, 40, 0.1]} />
 			<meshPhysicalMaterial />
 		</mesh>
 	)

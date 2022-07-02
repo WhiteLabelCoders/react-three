@@ -2,7 +2,6 @@ import { useEffect } from "react"
 import { useThree, useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
-
 const CameraControls = () => {
 
 	const cameraPositionY = 6
@@ -242,7 +241,6 @@ const CameraControls = () => {
 		}
 	)
 
-	console.log(camera)
 	return null
 }
 
