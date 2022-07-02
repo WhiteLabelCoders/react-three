@@ -1,9 +1,12 @@
+import { Suspense } from 'react';
 import ReactDOM from 'react-dom'
 import { Canvas, useFrame, useThree, extend } from '@react-three/fiber'
 import './App.css';
 
-import CameraControls from './helpers/CameraControls'
-import FlyControll from './helpers/FlyControll';
+
+import FPVControls from './controllers/FPVControls';
+import CameraControls from './controllers/CameraControls'
+import User from './controllers/User';
 
 import Box from './objects/Box';
 
@@ -12,17 +15,23 @@ function App() {
   return (
     <div className="canvas-container">
       <Canvas className='webgl'>
-        {/* helpers */}
-        <CameraControls />
-        {/* <FlyControll /> */}
-        <gridHelper args={[100, 100]} />
+        <Suspense fallback={null}>
 
-        {/* lights */}
-        <ambientLight intensity={0.1} color={'white'} />
-        <pointLight color="white" position={[5, 3, 10]} lookAt={[0, 0, 0]} />
+          {/* helpers */}
+          <CameraControls />
 
-        {/* objects */}
-        <Box />
+          <User />
+          {/* <FPVControls /> */}
+          <gridHelper args={[100, 100]} />
+
+          {/* lights */}
+          <ambientLight intensity={0.1} color={'white'} />
+          <pointLight color="white" position={[5, 3, 10]} lookAt={[0, 0, 0]} />
+
+          {/* objects */}
+          <Box />
+
+        </Suspense >
       </Canvas>
     </div>
   );
