@@ -1,15 +1,15 @@
-import { Suspense } from 'react';
+import { Suspense } from 'react'
 import ReactDOM from 'react-dom'
 import { Canvas, useFrame, useThree, extend } from '@react-three/fiber'
-import './App.css';
+import './App.css'
 
 
-import FPVControls from './controllers/FPVControls';
+import FPVControls from './controllers/FPVControls'
 import CameraControls from './controllers/CameraControls'
-import User from './controllers/User';
+import User from './controllers/User'
+import Terminal from './models/terminal/Terminal'
 
-import Box from './objects/Box';
-
+import Box from './objects/Box'
 
 function App() {
   return (
@@ -21,7 +21,6 @@ function App() {
           <CameraControls />
 
           <User />
-          {/* <FPVControls /> */}
           <gridHelper args={[100, 100]} />
 
           {/* lights */}
@@ -29,14 +28,14 @@ function App() {
           <pointLight color="white" position={[5, 3, 10]} lookAt={[0, 0, 0]} />
 
           {/* objects */}
-          <Box />
+          {/* <Box /> */}
 
+          {/* models */}
+          <Terminal scale={[0.5, 0.5, 0.5]} />
         </Suspense >
       </Canvas>
     </div>
-  );
+  )
 }
 
-// ReactDOM.render(<App />, document.getElementById('root'))
-
-export default App;
+export default App

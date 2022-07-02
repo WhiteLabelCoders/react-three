@@ -1,4 +1,4 @@
-import { FirstPersonControls } from "@react-three/drei";
+import { FirstPersonControls } from "@react-three/drei"
 
 const FPVControls = () => {
 	const args = {
@@ -17,20 +17,9 @@ const FPVControls = () => {
 		// verticalMin: 0,
 	}
 
-	console.log(args)
-
-	// export const FirstPersonControlsStory = ({ ...args }) => (
-	// 	<>
-	// 		<FirstPersonControls {...args} />
-	// 		<Box>
-	// 			<meshBasicMaterial wireframe />
-	// 		</Box>
-	// 	</>
-	// )
-
 	return (
 		<FirstPersonControls {...args} />
-	);
+	)
 }
 
-export default FPVControls;
+export default FPVControls
