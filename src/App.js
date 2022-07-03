@@ -4,13 +4,12 @@ import { Canvas, useFrame, useThree, extend } from '@react-three/fiber'
 import './App.css'
 
 
-import FPVControls from './controllers/FPVControls'
 import CameraControls from './controllers/CameraControls'
-import User from './controllers/User'
-import JSX3D from './JSX3D/JSX3D'
-import Render3D from './JSX3D/Render3D'
+import FlyControl from './controllers/FlyControl'
+import ComponentBinder from './controllers/ComponentBinder'
+import { Fog } from 'three'
 
-import Box from './objects/Box'
+// import Box from './objects/Box'
 
 
 
@@ -18,13 +17,19 @@ function App() {
 
   return (
     <div className="canvas-container">
-      <Canvas className='webgl'>
+      <Canvas
+        className='webgl'
+        color={'0x000000'}
+        gl={{ alpha: false }}
+        onCreated={(state) => {
+          state.scene.fog = new Fog("#000", 3, 15)
+        }}>
         <Suspense fallback={null}>
 
           {/* helpers */}
           <CameraControls />
+          {/* <FlyControl /> */}
 
-          <User />
           <gridHelper args={[100, 100]} />
 
           {/* lights */}
@@ -32,7 +37,7 @@ function App() {
           <pointLight color="white" position={[5, 3, 10]} lookAt={[0, 0, 0]} />
 
           {/* objects */}
-          <Box />
+          <ComponentBinder />
 
           {/* models */}
         </Suspense >

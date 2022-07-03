@@ -3,7 +3,7 @@ import { useThree, useFrame } from '@react-three/fiber'
 import { FlyControls } from "@react-three/drei"
 
 
-const User = () => {
+const FlyControl = () => {
 	const { camera } = useThree()
 
 	return (
@@ -11,4 +11,4 @@ const User = () => {
 	)
 }
 
-export default User
+export default FlyControl
