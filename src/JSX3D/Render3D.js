@@ -6,7 +6,7 @@ import JSX3D from "./JSX3D";
 
 const Render3D = () => {
 
-	const screenJSX = document.querySelector('.js--screen');
+	let screenJSX = document.querySelector('.js--screen');
 	const { camera, gl, mouse, scene } = useThree()
 	const tempV = new THREE.Vector3();
 	let screenHTML = []
@@ -15,6 +15,7 @@ const Render3D = () => {
 		if (child['name'] === "screen") {
 			screenHTML.push(child)
 			console.log(screenHTML)
+			// console.log(screen)
 		}
 	}
 	// screenHTML.updateWorldMatrix(true, false);

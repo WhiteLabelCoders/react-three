@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, useRef } from 'react'
 import ReactDOM from 'react-dom'
 import { Canvas, useFrame, useThree, extend } from '@react-three/fiber'
 import './App.css'
@@ -7,7 +7,6 @@ import './App.css'
 import FPVControls from './controllers/FPVControls'
 import CameraControls from './controllers/CameraControls'
 import User from './controllers/User'
-import Terminal from './models/terminal/Terminal'
 import JSX3D from './JSX3D/JSX3D'
 import Render3D from './JSX3D/Render3D'
 
@@ -34,13 +33,10 @@ function App() {
 
           {/* objects */}
           <Box />
-          <Render3D />
 
           {/* models */}
-          <Terminal scale={[0.5, 0.5, 0.5]} />
         </Suspense >
       </Canvas>
-      <JSX3D />
     </div>
   )
 }
