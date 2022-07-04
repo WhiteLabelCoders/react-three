@@ -14,9 +14,8 @@ const PanelIO = (props) => {
 	const message = () => {
 		(async () => {
 			for (let i = 0; i < messages.length; i++) {
-				// Wait to do this one until a delay after the last one
 				if (i > 0) {
-					await delay(4000); // 5000 for five seconds
+					await delay(4000);
 				}
 				props.setText(messages[i])
 			}
