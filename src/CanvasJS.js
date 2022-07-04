@@ -1,8 +1,8 @@
-import { Canvas } from "@react-three/fiber";
-import { Fog } from "three";
-import { Suspense, useRef } from "react";
-import CameraControls from "./controllers/CameraControls";
-import ComponentBinder from "./controllers/ComponentBinder";
+import { Canvas } from "@react-three/fiber"
+import { Fog } from "three"
+import { Suspense, useRef } from "react"
+import CameraControls from "./controllers/CameraControls"
+import ComponentBinder from "./controllers/ComponentBinder"
 import * as THREE from 'three'
 
 const CanvasJS = () => {

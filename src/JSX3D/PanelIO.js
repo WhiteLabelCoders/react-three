@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect } from "react"
+import Typer from "../effects/Typer"
 
 const PanelIO = (props) => {
 
@@ -6,8 +7,8 @@ const PanelIO = (props) => {
 
 	let messages = [
 		'Hello user',
-		'This is you: \n <CameraControls />',
-		'Twoja Stara'
+		'This is you:',
+		'<CameraControls />'
 	]
 	let i = 0;
 
@@ -15,14 +16,14 @@ const PanelIO = (props) => {
 		(async () => {
 			for (let i = 0; i < messages.length; i++) {
 				if (i > 0) {
-					await delay(4000);
+					await delay(3000)
 				}
-				props.setText(messages[i])
+				props.setText(<Typer speed={100} msg={messages[i]} ></Typer>)
 			}
 		})();
 	}
 
-	const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+	const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 	return (
 		<div className="panelIO-render js--panelIO">
