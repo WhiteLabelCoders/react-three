@@ -1,15 +1,19 @@
 import Screen from "../objects/Screen";
 import TerminalJSX from "../objects/TerminalJSX";
-import { useState } from "react";
+import { useState, createContext } from "react";
 
 const ComponentBinder = () => {
 
-	const [txt, setTxt] = useState('Elo2')
+	const EntryContext = createContext()
+
+	const [txt, setTxt] = useState('')
 
 	return (
 		<group className="wrapper" >
-			<Screen txt={txt} />
-			<TerminalJSX setText={setTxt} />
+			<EntryContext.Provider value={txt}>
+				<Screen txt={txt} setText={setTxt} />
+				<TerminalJSX setText={setTxt} />
+			</EntryContext.Provider>
 		</group>
 	);
 }

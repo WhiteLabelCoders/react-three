@@ -3,7 +3,7 @@ import { Html } from "@react-three/drei"
 import Terminal from '../models/terminal/Terminal'
 import { useRef, useState } from "react"
 
-const Screen = (pprops) => {
+const Screen = (props) => {
 
 	const box = useRef()
 
@@ -17,7 +17,7 @@ const Screen = (pprops) => {
 			<mesh >
 				<Html className="content" position={[0, 15, -49.9]} scale={[3.5, 3.5, 1]} transform occlude >
 					<div className="wrapper">
-						<ScreenJSX txt={pprops.txt} />
+						<ScreenJSX txt={props.txt} setText={props.setText} />
 					</div>
 				</Html>
 			</mesh>
