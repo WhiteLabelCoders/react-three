@@ -7,7 +7,6 @@ const Screen = (props) => {
 
 	const box = useRef()
 
-
 	return (
 		<group>
 			<mesh ref={box} position={[0, 15, -50]} scale={0.6} onClick={(e) => console.log('click')} name={"screen"} renderOrder={2}>

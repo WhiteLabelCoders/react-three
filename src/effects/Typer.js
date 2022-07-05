@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const Typer = ({ speed, msg }) => {
-	const Type = ({ speed = 250, children = " Introduce your text" }) => {
+	const Type = ({ speed = 250, children = "" }) => {
 		const [idx, setidx] = useState(0);
 		useEffect(() => {
 			const timer = window.setInterval(() => setidx((v) => v + 1), speed);

@@ -4,6 +4,7 @@ import Terminal from '../models/terminal/Terminal'
 import PanelIO from '../JSX3D/PanelIO';
 import * as THREE from 'three'
 
+
 const TerminalJSX = (props) => {
 
 	const terminal = useRef()

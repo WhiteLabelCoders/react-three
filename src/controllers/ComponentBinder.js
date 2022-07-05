@@ -1,19 +1,18 @@
 import Screen from "../objects/Screen";
 import TerminalJSX from "../objects/TerminalJSX";
-import { useState, createContext } from "react";
+import { useState } from "react";
+import AnimationStateProvider from "../providers/AnimationStateProvider";
 
 const ComponentBinder = () => {
 
-	const EntryContext = createContext()
-
-	const [txt, setTxt] = useState('')
+	const [txt, setTxt] = useState()
 
 	return (
 		<group className="wrapper" >
-			<EntryContext.Provider value={txt}>
+			<AnimationStateProvider>
 				<Screen txt={txt} setText={setTxt} />
 				<TerminalJSX setText={setTxt} />
-			</EntryContext.Provider>
+			</AnimationStateProvider>
 		</group>
 	);
 }

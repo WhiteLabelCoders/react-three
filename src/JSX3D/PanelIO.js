@@ -1,18 +1,21 @@
-import { useEffect } from "react"
+import { useContext } from "react"
 import Typer from "../effects/Typer"
+import { useAnimationState, useSetAnimationState } from "../providers/AnimationStateProvider"
+
 
 const PanelIO = (props) => {
 
-	// useEffect(() => {
 
 	let messages = [
 		'Hello user',
 		'This is you:',
 		'<CameraControls />'
 	]
-	let i = 0;
+
+	console.log(useSetAnimationState())
 
 	const message = () => {
+		//context false
 		(async () => {
 			for (let i = 0; i < messages.length; i++) {
 				if (i > 0) {
