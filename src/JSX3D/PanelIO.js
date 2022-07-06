@@ -1,9 +1,12 @@
 import { useContext } from "react"
 import Typer from "../effects/Typer"
-import { useAnimationState, useSetAnimationState } from "../providers/AnimationStateProvider"
+// import { AnimationStateContext, SetAnimationStateContext, useAnimationState, useSetAnimationState } from "../providers/AnimationStateProvider"
+import { animCcontext } from "../controllers/ComponentBinder"
+import { CounterContext } from "../controllers/ComponentBinder"
 
 
 const PanelIO = (props) => {
+	const contextValue = useContext(CounterContext)
 
 
 	let messages = [
@@ -12,7 +15,12 @@ const PanelIO = (props) => {
 		'<CameraControls />'
 	]
 
-	console.log(useSetAnimationState())
+	// const [, dispatch] = useContext(CounterContext);
+
+	// useSetAnimationState(true)
+
+
+	console.log()
 
 	const message = () => {
 		//context false

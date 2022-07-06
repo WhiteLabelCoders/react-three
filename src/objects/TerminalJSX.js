@@ -31,7 +31,7 @@ const TerminalJSX = (props) => {
 					occlude >
 
 					<div className="wrapper">
-						<PanelIO setText={props.setText} />
+						<PanelIO setText={props.setText} animationState={false} />
 					</div>
 				</Html>
 			</mesh>
