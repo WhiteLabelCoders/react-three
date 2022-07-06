@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import Terminal from '../models/terminal/Terminal'
 import PanelIO from '../JSX3D/PanelIO';
 import * as THREE from 'three'
+import LeftPanelJSX from "../JSX3D/LeftPanelJSX";
 
 
 const TerminalJSX = (props) => {
@@ -14,7 +15,6 @@ const TerminalJSX = (props) => {
 			<mesh
 				scale={[0.3, 0.3, 0.3]}
 				localToWorld>
-
 				<Terminal scale={[0.5, 0.5, 0.5]} />
 			</mesh>
 			<mesh
@@ -31,7 +31,7 @@ const TerminalJSX = (props) => {
 					occlude >
 
 					<div className="wrapper">
-						<PanelIO setText={props.setText} animationState={false} />
+						<PanelIO setText={props.setText} setIntensity={props.setIntensity} />
 					</div>
 				</Html>
 			</mesh>

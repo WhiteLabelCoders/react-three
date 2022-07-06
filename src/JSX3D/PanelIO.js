@@ -1,26 +1,17 @@
-import { useContext } from "react"
 import Typer from "../effects/Typer"
-// import { AnimationStateContext, SetAnimationStateContext, useAnimationState, useSetAnimationState } from "../providers/AnimationStateProvider"
-import { animCcontext } from "../controllers/ComponentBinder"
-import { CounterContext } from "../controllers/ComponentBinder"
 
 
 const PanelIO = (props) => {
-	const contextValue = useContext(CounterContext)
-
 
 	let messages = [
 		'Hello user',
 		'This is you:',
-		'<CameraControls />'
+		'<CameraControls />',
+		'You are a part of...',
+		'...a more complex code.',
+		'Feel free to browse this...',
+		'...simple React + 3D project'
 	]
-
-	// const [, dispatch] = useContext(CounterContext);
-
-	// useSetAnimationState(true)
-
-
-	console.log()
 
 	const message = () => {
 		//context false
@@ -40,7 +31,10 @@ const PanelIO = (props) => {
 		<div className="panelIO-render js--panelIO">
 			<div
 				className="panel-start js--start"
-				onClick={() => { message() }}>
+				onClick={() => {
+					message()
+					props.setIntensity(1)
+				}} >
 				START
 			</div>
 		</div>
