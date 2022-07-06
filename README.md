@@ -10,6 +10,8 @@ React components rendered on WebGL canvas deployed on React App
 
 3. npm run start
 
+4. When project loads in the browser, clisk START button on the terminal inside the Scene (use W,S,A,D to move around)
+
 ## Controlls:
 
 W - forward
